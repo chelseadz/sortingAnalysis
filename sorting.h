@@ -1,7 +1,7 @@
 #ifndef SORTING_H_INCLUDED
 #define SORTING_H_INCLUDED
 
-#include <array>
+#include "arrays.h"
 
 template <typename T>
 void Swap(T *a, T *b) {
@@ -13,11 +13,11 @@ void Swap(T *a, T *b) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename T>
-void insertionSort (T datos[], int beg, int fin)
+void insertionSort (T datos[], unsigned long int beg, unsigned long int fin, unsigned long int len)
 {
-    for (int i=1 ; i<fin ; i++)
+    for (unsigned long int i=1 ; i<fin ; i++)
     {
-        int s=i;
+        unsigned long int s=i;
         int aux=datos[i];
         while ( (s>0) && (datos[s-1]>aux) )
         {
@@ -28,8 +28,9 @@ void insertionSort (T datos[], int beg, int fin)
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
 template <typename T>
-void SelectionSort (T datos[], int beg, int fin)
+void selectionSort (T datos[], unsigned long int beg, unsigned long int fin, unsigned long int len)
 {
     int aux=fin-1;
     for (int i=0 ; i<aux ; i++)
@@ -42,9 +43,32 @@ void SelectionSort (T datos[], int beg, int fin)
         Swap(&datos[i], &datos[minimo]);
     }
 }
+*/
+template <typename T>
+void selectionSort(T arr[], unsigned long int beg, unsigned long int fin, unsigned long int n)
+{
+    unsigned long int i, j, min_idx;
+    // One by one move boundary of
+    // unsorted subarray
+    for (i = 0; i < n-1; i++)
+    {
+        // Find the minimum element in
+        // unsorted array
+        min_idx = i;
+        for (j = i+1; j < n; j++)
+        {
+          if (arr[j] < arr[min_idx])
+              min_idx = j;
+        }
+        // Swap the found minimum element
+        // with the first element
+        if (min_idx!=i)
+           Swap(&arr[min_idx], &arr[i]);
+    }
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename T>
-void QuickSort (T datos[], int izq, int der)
+void QuickSort (T datos[], unsigned long int izq, unsigned long int der, unsigned long int len)
 {
     int i = izq, j=der;
     int piv = datos[(i+j)/2];
@@ -69,50 +93,62 @@ void QuickSort (T datos[], int izq, int der)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename T>
-void Merge(T arr[], int l, int m, int r) {
+void merge(T arr[], unsigned long int left, unsigned long int middle, unsigned long int right, unsigned long int len) {
     int i, j, k;
-    int n1 = m - l + 1;
-    int n2 = r - m;
-    T* L = new T[n1];
-    T* R = new T[n2];
+    int n1 = middle - left + 1;
+    int n2 = right - middle;
+
+    // Create temporary arrays
+    T L[n1], R[n2];
+
+    // Copy data to temporary arrays L[] and R[]
     for (i = 0; i < n1; i++)
-        L[i] = arr[l + i];
+        L[i] = arr[left + i];
     for (j = 0; j < n2; j++)
-        R[j] = arr[m + 1 + j];
-    i = 0;
-    j = 0;
-    k = l;
+        R[j] = arr[middle + 1+ j];
+
+    // Merge the temporary arrays back into arr[left..right]
+    i = 0; // Initial index of first subarray
+    j = 0; // Initial index of second subarray
+    k = left; // Initial index of merged subarray
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
-        } else {
+        }
+        else {
             arr[k] = R[j];
             j++;
         }
         k++;
     }
+
+    // Copy the remaining elements of L[], if there are any
     while (i < n1) {
         arr[k] = L[i];
         i++;
         k++;
     }
+
+    // Copy the remaining elements of R[], if there are any
     while (j < n2) {
         arr[k] = R[j];
         j++;
         k++;
     }
-    delete[] L;
-    delete[] R;
 }
 
 template <typename T>
-void mergeSort(T arr[], int beg, int fin) {
-    if (beg < fin) {
-        int m = beg + (fin - beg) / 2;
-        mergeSort(arr, beg, m);
-        mergeSort(arr, m + 1, fin);
-        Merge<T>(arr, beg, m, fin);
+void mergeSort(T arr[], unsigned long int left, unsigned long int right, unsigned long int len) {
+    if (left < right) {
+        // Same as (left+right)/2, but avoids overflow for large left and right
+        int middle = left + (right - left) / 2;
+
+        // Sort first and second halves
+        mergeSort(arr, left, middle,len);
+        mergeSort(arr, middle + 1, right, len);
+
+        merge(arr, left, middle, right, len);
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////

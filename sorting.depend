@@ -2,18 +2,20 @@
 1676392112 source:c:\users\te533640\documents\personal\6sem\analisis de algoritmos\c\sorting\arrays.cpp
 	"arrays.h"
 
-1676483153 c:\users\te533640\documents\personal\6sem\analisis de algoritmos\c\sorting\arrays.h
+1677015943 c:\users\te533640\documents\personal\6sem\analisis de algoritmos\c\sorting\arrays.h
 	<stdlib.h>
 	<random>
 	<chrono>
+	<iomanip>
 
-1676482918 source:c:\users\te533640\documents\personal\6sem\analisis de algoritmos\c\sorting\main.cpp
+1677015878 source:c:\users\te533640\documents\personal\6sem\analisis de algoritmos\c\sorting\main.cpp
 	<iostream>
 	"sorting.h"
 	<sys/time.h>
 	"arrays.h"
 	<stdlib.h>
+	<cmath>
 
-1676479639 c:\users\te533640\documents\personal\6sem\analisis de algoritmos\c\sorting\sorting.h
-	<array>
+1676993906 c:\users\te533640\documents\personal\6sem\analisis de algoritmos\c\sorting\sorting.h
+	"arrays.h"
 

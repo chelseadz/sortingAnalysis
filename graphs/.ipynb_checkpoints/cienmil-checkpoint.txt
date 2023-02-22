@@ -1,0 +1,49 @@
+         promedio       peor    mejor    len: 10000
+Merge:  0.002347, 0.00097, 0.000968,
+Insertion 0.097314, 4e-05, 4e-05,
+Selection 0.137946, 0.136454, 0.136914,
+
+         promedio       peor    mejor    len: 20000
+Merge:  0.003668, 0.001986, 0.002055,
+Insertion 0.316622, 7.8e-05, 8.3e-05,
+Selection 0.531441, 0.533976, 0.53216,
+
+         promedio       peor    mejor    len: 30000
+Merge:  0.004683, 0.003097, 0.003128,
+Insertion 0.626534, 0.000117, 0.000118,
+Selection 1.26003, 1.2044, 1.20247,
+
+         promedio       peor    mejor    len: 40000
+Merge:  0.00665, 0.004236, 0.004198,
+Insertion 1.14161, 0.000157, 0.000156,
+Selection 2.17818, 2.13951, 2.16626,
+
+         promedio       peor    mejor    len: 50000
+Merge:  0.008137, 0.005358, 0.005381,
+Insertion 1.75809, 0.000197, 0.000195,
+Selection 3.31654, 3.33152, 3.38254,
+
+         promedio       peor    mejor    len: 60000
+Merge:  0.012919, 0.006581, 0.00655,
+Insertion 2.57504, 0.000234, 0.000234,
+Selection 4.91732, 4.80106, 4.83903,
+
+         promedio       peor    mejor    len: 70000
+Merge:  0.016114, 0.007724, 0.007745,
+Insertion 3.47243, 0.000272, 0.000272,
+Selection 6.56807, 6.63726, 6.58557,
+
+         promedio       peor    mejor    len: 80000
+Merge:  0.021104, 0.008893, 0.008869,
+Insertion 4.54807, 0.000313, 0.000316,
+Selection 8.61847, 8.56259, 8.58117,
+
+         promedio       peor    mejor    len: 90000
+Merge:  0.014875, 0.014138, 0.010042,
+Insertion 5.68676, 0.000422, 0.00035,
+Selection 10.7967, 10.8413, 10.8925,
+
+         promedio       peor    mejor    len: 100000
+Merge:  0.01994, 0.011286, 0.011282,
+Insertion 7.05836, 0.000389, 0.000391,
+Selection 13.4562, 15.3094, 13.5406,
