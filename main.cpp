@@ -103,10 +103,11 @@ void trySortByLen(unsigned long int len)
 
 int main()
 {
-    unsigned long int len =10000;
+    unsigned long int len =1000;
     for(int i = 0; i<10; i++){
         trySortByLen(len);
-        len = len+10000;
+        len = len+1000;
+
     }
 
     return 0;
