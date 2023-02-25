@@ -35,10 +35,10 @@ void printMat(T *arr, int cant, int len)
     }
 }
 
-/** \brief  Reserva memoria din·mica para una matriz (cant x len)
+/** \brief  Reserva memoria din√°mica para una matriz (cant x len)
  *  \param  cant:   cantidad de renglones
  *          len:    cantidad de columnas
- *  \return la media de tiempo utilizado para ordenar los arreglos
+ *  \return matriz ls
  */
 template <typename T>
 T** reserveMatrix(int cant, unsigned long int len) {
