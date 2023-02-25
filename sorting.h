@@ -28,40 +28,22 @@ void insertionSort (T datos[], unsigned long int beg, unsigned long int fin, uns
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
-template <typename T>
-void selectionSort (T datos[], unsigned long int beg, unsigned long int fin, unsigned long int len)
-{
-    int aux=fin-1;
-    for (int i=0 ; i<aux ; i++)
-    {
-        int minimo=i;
-        for (int j=i+1 ; j<fin ; j++)
-        {
-            if (datos[j]<datos[minimo]) minimo = j;
-        }
-        Swap(&datos[i], &datos[minimo]);
-    }
-}
-*/
+
 template <typename T>
 void selectionSort(T arr[], unsigned long int beg, unsigned long int fin, unsigned long int n)
 {
     unsigned long int i, j, min_idx;
-    // One by one move boundary of
-    // unsorted subarray
+    
     for (i = 0; i < n-1; i++)
     {
-        // Find the minimum element in
-        // unsorted array
+        // Find the minimum element
         min_idx = i;
         for (j = i+1; j < n; j++)
         {
           if (arr[j] < arr[min_idx])
               min_idx = j;
         }
-        // Swap the found minimum element
-        // with the first element
+        // Swap the found minimum element with the first element
         if (min_idx!=i)
            Swap(&arr[min_idx], &arr[i]);
     }
@@ -141,7 +123,6 @@ void merge(T arr[], unsigned long int left, unsigned long int middle, unsigned l
 template <typename T>
 void mergeSort(T arr[], unsigned long int left, unsigned long int right, unsigned long int len) {
     if (left < right) {
-        // Same as (left+right)/2, but avoids overflow for large left and right
         int middle = left + (right - left) / 2;
 
         // Sort first and second halves
